@@ -6,13 +6,11 @@ const searchFunction = async () => {
     main.innerHTML = ""
     const res = await fetch(`http://www.omdbapi.com/?apikey=ca17555b&s=${searchBar.value}&type=movie`)
     const data = await res.json()
-    console.log(data)
     if (data.Response === "True") {
         for (let i=0; i<10; i++) {
        const res2 = await fetch(`http://www.omdbapi.com/?apikey=ca17555b&i=${data.Search[i].imdbID}&plot=short`)
        const data2 = await res2.json()
-       console.log(data2)
-       if (localStorage.key(i)) {
+       if (localStorage.getItem(data.Search[i].imdbID)) {
          main.innerHTML += `
         <div class="movie-container">
             <img alt="picture of le movie" src="${data2.Poster}">
@@ -77,7 +75,6 @@ document.addEventListener("click", async (e) => {
        localStorage.setItem(`${e.target.dataset.movie}`, JSON.stringify(placeholder))
        e.target.parentElement.innerHTML = "<p>ADDED!</p>"
     } else {
-        console.log("BASTARD")
     }
 })
 

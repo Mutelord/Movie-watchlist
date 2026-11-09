@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
+          <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../watchlist/watchlist.css">
     </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>My Watchlist</h1>
+                <a href="../searchPage/index.html">search for movies</a>
+            </header>
+            <main id="main">
+                <div class="outer-main-container">
+                    <h2 class="gray">Your watchlist is looking a little empty...</h2>
+                    <div class="main-container" id="main-container">
+                        <button class="watchlist-add-btn">+</button>
+                        <h3>Lets add some movies</h3>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="watchlist.js"></script>
+    </body>
 </html>

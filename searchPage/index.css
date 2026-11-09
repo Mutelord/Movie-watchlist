@@ -8,7 +8,6 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    background-color: black;
     flex-direction: column;
     align-items: center;
     height: 100vh;
@@ -30,7 +29,7 @@ header {
     background-size: cover;
     background-position-y: -145px;
     background-color: #0E0E0E;
-    background-blend-mode: multiply;
+    background-blend-mode: difference;
     max-height: 208px;
     height: 100%;
     display: flex;
@@ -41,6 +40,10 @@ header {
 }
 header h1 {
     font-size: 2.625rem;
+}
+header a, header a:visited {
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -54,26 +57,29 @@ main {
     max-width: 550px;
     width: 100%;
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     overflow-y: auto;
+
 }
 main h2 {
     margin: 0;
     color: #DFDDDD;
+    font-size: 1.125rem;    
 
 }
 .ph-film-strip {
     color: #DFDDDD;
     display: inline-block;
-   font-size: 5.5rem;
+   font-size: 3.5rem;
    margin: 0;
    padding: 0;
    transform: rotate(90deg) scale(1, 1.5);
 }
-
+.main-container {
+    display: block;
+    width: 30%;
+    margin: 12em auto;
+    text-align: center;
+}
 /* Search bar */
 .search-bar-container {
     max-width: 462px;
@@ -82,6 +88,7 @@ main h2 {
     inset: 195px 0 0 10%;
     gap: 0px;
     display: flex;
+    max-height: 38px;
 }
 .search-bar-container i {
     position: absolute;
@@ -113,4 +120,82 @@ main h2 {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-left: none;
+}
+
+/* LISTINGS */
+.movie-container {
+    max-width: 550px;
+    max-height: 250px;
+    margin: 3em;
+    gap: 0.5em;
+    display: grid;
+    grid-template-areas: 
+    "imgs  imgs titl titl rati ...."
+    "imgs  imgs dura genr btns ...."
+    "imgs  imgs plot plot plot plot"
+    "imgs  imgs plot plot plot plot"
+    
+    ;
+    grid-auto-flow: dense;
+    border-bottom: 2px #E5E7EB solid;
+    padding-bottom: 2em;
+}
+.movie-container img {
+    max-width: 99px;
+    max-height: 150px;
+    display: block;
+    grid-area: imgs;
+
+}
+.movie-title {
+    grid-area: titl;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.rating {
+    grid-area: rati;
+    font-size: 0.75rem;
+}
+.duration {
+    grid-area: dura;
+}
+.genres {
+    grid-area: genr;
+    font-size: 0.75rem;
+    width: max-content;
+}
+.watchlist-add-btn-container {
+    grid-area: btns;
+    display: flex;
+    gap: 0.25em;
+}
+
+.watchlist-add-btn {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 0;
+    font-weight: bold;
+}
+.watchlist-add-btn-description {
+    font-size: 0.75rem;
+}
+.plot {
+    grid-area: plot;
+    font-size: 0.875rem;
+}
+.movie-container * {
+    margin: 0;
+}
+.center {
+    margin: 12em auto;
+    width: 80%;
+    display: block;
+}
+.ph-star {
+    color: goldenrod;
 }

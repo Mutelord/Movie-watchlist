@@ -1,0 +1,150 @@
+*, *::after, ::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-family: "inter", sans-serif;
+
+
+}
+.container {
+    max-width: 550px;
+    width: 100%;
+    max-height: 779px;
+    height: 100%;
+    position: relative;
+}
+header {
+    max-width: 550px;
+    width: 100%;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position-y: -145px;
+    background-color: #0E0E0E;
+    background-blend-mode: multiply;
+    max-height: 208px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    border: solid white 1px;
+}
+header h1 {
+    font-size: 2.625rem;
+}
+header a, header a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+/* MAIN */
+main {
+    height: 100%;
+}
+.outer-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+}
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+}
+main h3 {
+    margin: 0;
+}
+main h2 {
+    margin-bottom: 0;
+}
+
+/* MOVIE LIST */
+.movie-container {
+    max-width: 550px;
+    max-height: 250px;
+    margin: 3em;
+    gap: 0.5em;
+    display: grid;
+    grid-template-areas: 
+    "imgs  imgs titl titl rati ...."
+    "imgs  imgs dura genr btns ...."
+    "imgs  imgs plot plot plot plot"
+    "imgs  imgs plot plot plot plot"
+    
+    ;
+    grid-auto-flow: dense;
+}
+.movie-container img {
+    max-width: 99px;
+    max-height: 150px;
+    display: block;
+    grid-area: imgs;
+
+}
+.movie-title {
+    grid-area: titl;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+.rating {
+    grid-area: rati;
+    font-size: 0.75rem;
+}
+.duration {
+    grid-area: dura;
+}
+.genres {
+    grid-area: genr;
+    font-size: 0.75rem;
+    width: max-content;
+}
+.watchlist-add-btn-container {
+    grid-area: btns;
+    display: flex;
+    gap: 0.25em;
+}
+
+.watchlist-add-btn {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    padding: 0;
+    font-weight: bold;
+}
+.watchlist-add-btn-description {
+    font-size: 0.75rem;
+}
+.plot {
+    grid-area: plot;
+    font-size: 0.875rem;
+}
+.movie-container * {
+    margin: 0;
+}
+.center {
+    margin: 12em auto;
+    width: 80%;
+    display: block;
+}
+.gray {
+    color: grey;
+}
+.ph-star {
+    color: goldenrod;
+}
